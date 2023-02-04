@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  gather_facts: True
+
+  tasks:
+  # Using vmware_vcenter_upgrade module
+  #
+    - name: Get data
+      vmware_vcenter_upgrade:
+        hostname: 10.1.10.54
+        username: root
+        password: TekGurus-2023
+        ignore_warnings: True
+        action: 'query'
+      delegate_to: localhost

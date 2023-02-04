@@ -1,0 +1,107 @@
+{
+    "__version": "2.13.0",
+    "__comments": [
+            "Sample template to upgrade vCenter Server Appliance 6.7 with an external Platform Services Controller to a vCenter Server Appliance 7.0 with an embedded Platform Services Controller.",
+            "After a successful convergence upgrade, you can no longer use the external Platform Services Controller.",
+            "You must decommission the external Platform Services Controller using the cmsso-util command. To learn more, see KB 2106736: https://kb.vmware.com/s/article/2106736"
+        ],
+    "new_vcsa": {
+        "esxi": {
+            "hostname": "<FQDN or IP address of the ESXi host on which to deploy the new appliance>",
+            "username": "root",
+            "password": "<Password of the ESXi host root user. If left blank, or omitted, you will be prompted to enter it at the command console during template verification.>",
+            "deployment_network": "VM Network",
+            "datastore": "<A specific ESXi host datastore, or a specific datastore in a datastore cluster.>"
+        },
+        "appliance": {
+            "__comments": [
+                "You must provide the 'deployment_option' key with a value, which will affect the vCenter Server Appliance's configuration parameters, such as the vCenter Server Appliance's number of vCPUs, the memory size, the storage size, and the maximum numbers of ESXi hosts and VMs which can be managed. For a list of acceptable values, run the supported deployment sizes help, i.e. vcsa-deploy --supported-deployment-sizes"
+            ],
+            "thin_disk_mode": true,
+            "deployment_option": "small",
+            "name": "vCenter-Server-Appliance"
+        },
+        "os": {
+            "ssh_enable": false
+        },
+        "temporary_network": {
+            "ip_family": "<ipv4 or ipv6>",
+            "mode": "static",
+            "ip": "<Static IP address. Remove this if using dhcp.>",
+            "prefix": "<Network prefix length. Use only when the mode is 'static'. Remove if the mode is 'dhcp'. This is the number of bits set in the subnet mask; for instance, if the subnet mask is 255.255.255.0, there are 24 bits in the binary version of the subnet mask, so the prefix length is 24. If used, the values must be in the inclusive range of 0 to 32 for IPv4 and 0 to 128 for IPv6.>",
+            "gateway": "<Gateway IP address. Remove this if using dhcp.>",
+            "dns_servers": [
+                "<DNS Server IP Address. Remove this if using dhcp.>"
+            ]
+        },
+        "user_options": {
+            "__comments": [
+			    "Select the data that you want to copy from the source vCenter Server.",
+				"'core' = 'Configuration and Inventory',",
+				"'core_events_tasks' = 'Configuration, Inventory, Tasks and Events'",
+				"'all' = 'Configuration Inventory, Tasks, Events and Performance Metrics'"
+			],
+            "vcdb_migrateSet": "<Select the migration data option that will be used to copy from the source vCenter Server. Available options are 'core', 'core_events_tasks' and 'all'.>"
+        },
+        "sso": {
+            "__comments": [
+                 "Important: The information in this section will change the topology of your deployment. Refer to the vSphere documentation for more information.",
+                 "Set first_instance to true if this is the first converge upgrade operation in your vCenter Server SSO domain or if you do not want to set the replication partner for this node.",
+                 "If you want to set the replication partner for this node set first_instance to false and provide value of replication_partner_hostname as FQDN of a previously",
+                 "converged node which is currently in a embedded vCenter Server topology"
+            ],
+            "first_instance": false,
+            "replication_partner_hostname": "<Host name of the replication partner. Remove if this is the first_instance.>"
+        }
+    },
+    "source_vc": {
+        "description": {
+            "__comments": [
+                "This section describes the source appliance which you want to",
+                "upgrade and the ESXi host on which the appliance is running. "
+            ]
+        },
+        "managing_esxi_or_vc": {
+            "hostname": "<FQDN or IP address of the ESXi or vCenter on which the source vCenter Server Appliance resides.>",
+            "username": "<Username of a user with administrative privilege on the ESXi host or vCenter Server. For example 'root' for ESXi and 'administrator@<SSO domain name>' for vCenter >",
+            "password": "<Password of the administrative user on the ESXi host or vCenter Server. If left blank, or omitted, you will be prompted to enter it at the command console during template verification.>"
+        },
+        "vc_vcsa": {
+            "hostname": "<FQDN or IP address of the source vCenter Server Appliance>",
+            "username": "administrator@<SSO domain name>",
+            "password": "<vCenter Single Sign-On administrator password. If left blank, or omitted, you will be prompted to enter it at the command console during template verification.>",
+            "root_password": "<Appliance root password. If left blank, or omitted, you will be prompted to enter it at the command console during template verification.>"
+        }
+    },
+    "ceip": {
+        "description": {
+            "__comments": [
+                "++++VMware Customer Experience Improvement Program (CEIP)++++",
+                "VMware's Customer Experience Improvement Program (CEIP) ",
+                "provides VMware with information that enables VMware to ",
+                "improve its products and services, to fix problems, ",
+                "and to advise you on how best to deploy and use our ",
+                "products. As part of CEIP, VMware collects technical ",
+                "information about your organization's use of VMware ",
+                "products and services on a regular basis in association ",
+                "with your organization's VMware license key(s). This ",
+                "information does not personally identify any individual. ",
+                "",
+                "Additional information regarding the data collected ",
+                "through CEIP and the purposes for which it is used by ",
+                "VMware is set forth in the Trust & Assurance Center at ",
+                "http://www.vmware.com/trustvmware/ceip.html . If you ",
+                "prefer not to participate in VMware's CEIP for this ",
+                "product, you should disable CEIP by setting ",
+                "'ceip_enabled': false. You may join or leave VMware's ",
+                "CEIP for this product at any time. Please confirm your ",
+                "acknowledgement by passing in the parameter ",
+                "--acknowledge-ceip in the command line.",
+                "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            ]
+        },
+        "settings": {
+            "ceip_enabled": true
+        }
+    }
+}

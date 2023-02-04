@@ -1,0 +1,404 @@
+Run the installer with "-v" or "--verbose" to log detailed information
+Not executing pre-check-only.
+Updating log file location, copying '/tmp/vcsaCliInstaller-2023-02-03-01-50-j5ym28vs/vcsa-cli-installer.log' to desired location as a backup: '/tmp/vcsaCliInstaller-2023-02-03-01-50-j5ym28vs/workflow_1675389037047/vcsa-cli-installer.log.bak'
+Consuming the installer build:20551001
+Workflow log-dir /tmp/vcsaCliInstaller-2023-02-03-01-50-j5ym28vs/workflow_1675389037047
+precheck_rpm_path = None
+
+=================================================================================================================================
+**********************************************************************************************
+**********************************************************************************************
+=================================================================================================================================
+
+================================ [START] Start executing Task: To validate CLI options at 01:50:47 ================================
+Command line arguments verified.
+ [SUCCEEDED] Successfully executed Task 'CLIOptionsValidationTask: Executing CLI optionsValidation task' in TaskFlow
+'template_validation' at 01:50:47
+======================== [START] Start executing Task: To validate the syntax of the template. at 01:50:47 ========================
+Template syntax validation for template './vcenter.xkdb.net.vCSA_on_ESXi.json' succeeded.
+Syntax validation for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'SyntaxValidationTask: Executing Template Syntax Validation task' in TaskFlow
+'template_validation' at 01:50:47
+ [START] Start executing Task: To check the version of each template, and for each older template that supports CEIP, convert it to
+the latest template format, and save it to the Template Blackboard at 01:50:47
+CEIP is not enabled because the template key 'ceip_enabled' in section 'ceip', subsection 'settings' in template
+'./vcenter.xkdb.net.vCSA_on_ESXi.json' was set to 'false'.
+CEIP is not enabled because the template key 'ceip_enabled' in section 'ceip', subsection 'settings' in template
+'./vcenter.xkdb.net.vCSA_on_ESXi.json' was set to 'false'.
+CEIP is not enabled because the template key 'ceip_enabled' in section 'ceip', subsection 'settings' in template
+'./vcenter.xkdb.net.vCSA_on_ESXi.json' was set to 'false'.
+Template version processing for template './vcenter.xkdb.net.vCSA_on_ESXi.json' succeeded.
+Version processing for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'VersionProcessingTask: Executing Template Version Processing task' in TaskFlow
+'template_validation' at 01:50:47
+ [START] Start executing Task: To validate the template structure against the rules specified by a corresponding template schema.
+at 01:50:47
+Template structure validation for template './vcenter.xkdb.net.vCSA_on_ESXi.json' succeeded.
+Structure validation for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'StructureValidationTask: Executing Template Structure Validation task' in TaskFlow
+'template_validation' at 01:50:47
+ [START] Start executing Task: To create a dependency graph for the provided templates, with an edge pairing two templates that are
+dependent on each other. Such graph relationships will affect whether certain templates can be deployed in parallel, or must be
+deployed sequentially. at 01:50:47
+Dependency processing for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'DependencyProcessingTask: Executing Template Dependency Processing task' in TaskFlow
+'template_validation' at 01:50:47
+================ [START] Start executing Task: Validate that requirements are met in the source VCSA. at 01:50:48 ================
+The certificate of server 'esxi1.xkdb.net' will not be verified because you have provided either the
+'--no-ssl-certificate-verification' or '--no-esx-ssl-verify' command parameter, which disables verification for all certificates.
+Remove this parameter from the command line if you want server certificates to be verified.
+Local upgrade runner version vmware-upgrade-requirements-7.0.3.01200-10685327
+Source VC upgrade runner version vmware-upgrade-requirements-7.0.3.01200-10685327
+Upgrade runner versions match, skip uploading upgrade runner and proceed with precheck.
+Running the upgrade checker. This may take a while...
+Requirements for vcdb.migrateSet:
+'all':
+    requiredSrcDiskSpace: 0.12 GB
+    requiredDstDiskSpace: 0.12 GB
+Requirements for vcdb.migrateSet:
+'core_events_tasks':
+    requiredSrcDiskSpace: 0.12 GB
+    requiredDstDiskSpace: 0.12 GB
+Requirements for vcdb.migrateSet:
+'core':
+    requiredSrcDiskSpace: 0.0 GB
+    requiredDstDiskSpace: 0 GB
+Basic requirements:
+Estimated disk space required on source VM for export data: 1.85 GB
+Estimated total disk space required on target VM: 3.01 GB
+Adding infrastructure domain name 'vsphere.local' discovered during upgrade precheck to the blackboard.
+Adding parameters discovered during the upgrade precheck to the configuration.
+ [SUCCEEDED] Successfully executed Task 'SrcRequirementTask: Running SrcRequirementTask' in TaskFlow
+'vcenter.xkdb.net.vCSA_on_ESXi' at 01:52:18
+================================ [START] Start executing Task: Perform precheck tasks. at 01:52:19 ================================
+ [START] Start executing Task: Precheck that the provided export dir has sufficient space for export. If none is provided recommend
+one. at 01:52:19
+Export directory is /var/tmp
+=== [SUCCEEDED] Successfully executed Task 'Running precheck: RecommendOrCheckExportDirTask' in TaskFlow 'upgrade' at 01:52:19 ===
+========= [START] Start executing Task: Verify that the provided credentials for the target ESXi/VC are valid at 01:52:19 =========
+========= [SUCCEEDED] Successfully executed Task 'Running precheck: TargetCredentials' in TaskFlow 'upgrade' at 01:52:19 =========
+=========== [START] Start executing Task: Precheck CPU, memory and datastore size requirements for a host. at 01:52:20 ===========
+============ [SUCCEEDED] Successfully executed Task 'Running precheck: HostConfigs' in TaskFlow 'upgrade' at 01:52:22 ============
+=========== [START] Start executing Task: Verify the target host type matches the one given in the template at 01:52:22 ===========
+=========== [SUCCEEDED] Successfully executed Task 'Running precheck: TargetHostType' in TaskFlow 'upgrade' at 01:52:22 ===========
+======= [START] Start executing Task: Verify that the target ESXi or VC version meets the minimum requirements at 01:52:22 =======
+=========== [SUCCEEDED] Successfully executed Task 'Running precheck: TargetVersion' in TaskFlow 'upgrade' at 01:52:23 ===========
+============= [START] Start executing Task: Validate that the OVA image has the required OVA properties. at 01:52:23 =============
+=========== [SUCCEEDED] Successfully executed Task 'Running precheck: OVAProperties.' in TaskFlow 'upgrade' at 01:52:23 ===========
+=================== [START] Start executing Task: Validate the provided ip/fqdn is available to use at 01:52:23 ===================
+Pinging IPv4 address 10.1.10.43
+10.1.10.43 is unreachable.
+Skipping system name check as no system name is provided
+============ [SUCCEEDED] Successfully executed Task 'Running precheck: IpFqdnInUse' in TaskFlow 'upgrade' at 01:52:27 ============
+== [SUCCEEDED] Successfully executed Task 'Running precheck: LinkingTargetHostnameValidation' in TaskFlow 'upgrade' at 01:52:27 ==
+====================== [START] Start executing Task: Validate the target ESXi management status at 01:52:27 ======================
+======== [SUCCEEDED] Successfully executed Task 'Running precheck: ESXManagementStatus' in TaskFlow 'upgrade' at 01:52:27 ========
+============ [START] Start executing Task: Validate the provided target appliance name is available to use at 01:52:28 ============
+=========== [SUCCEEDED] Successfully executed Task 'Running precheck: ApplianceName' in TaskFlow 'upgrade' at 01:52:28 ===========
+=========================================== [START] Start executing Task:  at 01:52:28 ===========================================
+=========================== [SUCCEEDED] Successfully executed Task '' in TaskFlow 'upgrade' at 01:52:28 ===========================
+==================== [START] Start executing Task: Verify the provided source vCenter credentials at 01:52:28 ====================
+========= [SUCCEEDED] Successfully executed Task 'Running precheck: SourceCredentials' in TaskFlow 'upgrade' at 01:52:30 =========
+=========== [START] Start executing Task: Validate that the deployment size is sufficient for the inventory at 01:52:30 ===========
+=========== [SUCCEEDED] Successfully executed Task 'Running precheck: InventorySize' in TaskFlow 'upgrade' at 01:52:30 ===========
+======== [START] Start executing Task: Precheck that the appliance has enough datastore storage and disk size at 01:52:30 ========
+======= [SUCCEEDED] Successfully executed Task 'Running precheck: DiskAndDSAvailability' in TaskFlow 'upgrade' at 01:52:30 =======
+================== [START] Start executing Task: Validate that the migrate set user option is valid at 01:52:31 ==================
+======== [SUCCEEDED] Successfully executed Task 'Running precheck: UserOptionMigrateSet' in TaskFlow 'upgrade' at 01:52:31 ========
+ [SUCCEEDED] Successfully executed Task 'PrecheckTask: Running prechecks.' in TaskFlow 'vcenter.xkdb.net.vCSA_on_ESXi' at 01:52:31
+======== [START] Start executing Task: Invoke OVF Tool to deploy VCSA for installation, upgrade, and migration at 01:52:31 ========
+Generated ovf tool command :
+/home/ansible/rockwell/vsphere/ansible-vmware-vcenter-upgrade/files/lin64/../../vcsa/ovftool/lin64/ovftool
+--configFile=/tmp/vcsaCliInstaller-2023-02-03-01-50-j5ym28vs/workflow_1675389037047/vcenter.xkdb.net.vCSA_on_ESXi/ovftool_config.cfg
+/home/ansible/rockwell/vsphere/ansible-vmware-vcenter-upgrade/files/lin64/../../vcsa/VMware-vCenter-Server-Appliance-7.0.3.01200-20990077_OVF10.ova
+vi://esxi1.xkdb.net:443
+OVF Tool: Opening OVA source:
+/home/ansible/rockwell/vsphere/ansible-vmware-vcenter-upgrade/files/lin64/../../vcsa/VMware-vCenter-Server-Appliance-7.0.3.01200-20990077_OVF10.ova
+OVF Tool: The manifest validates
+OVF Tool: The provided certificate is in valid period
+OVF Tool: Source is signed but could not verify certificate (possibly self-signed)
+OVF Tool: Certificate information:
+OVF Tool:   CertIssuer:/C=US/ST=California/L=Palo Alto/O=VMware, Inc.
+OVF Tool:   CertSubject:/C=US/ST=California/L=Palo Alto/O=VMware, Inc.
+OVF Tool:   -----BEGIN CERTIFICATE-----
+OVF Tool:   MIIDyzCCArOgAwIBAgIJAIR/y018RgMXMA0GCSqGSIb3DQEBCwUAME0xCzAJBgNV
+OVF Tool:   BAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRIwEAYDVQQHDAlQYWxvIEFsdG8x
+OVF Tool:   FTATBgNVBAoMDFZNd2FyZSwgSW5jLjAeFw0xNjA5MDgwMTE3MjFaFw0yOTEyMzEw
+OVF Tool:   MTE3MjFaME0xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRIwEAYD
+OVF Tool:   VQQHDAlQYWxvIEFsdG8xFTATBgNVBAoMDFZNd2FyZSwgSW5jLjCCASAwDQYJKoZI
+OVF Tool:   hvcNAQEBBQADggENADCCAQgCggEBALU9NUtC39fqG7yo2XAswUmtli9uA+31uAMw
+OVF Tool:   9FFHAEv/it8pzBQZ/4r+2bN+GnXOWhuDd1K4ApKMRvoO4LwQfZxrkx4pXrsu0gdb
+OVF Tool:   4OunHw0D8MrdzSoob8Js/uq+IJ+8Bhsc6b7RzTUt9HeDWzHasAJVgMsjehGt23ay
+OVF Tool:   9FKOT6dVD6D/Xi3qJnB/4t/XNS6L63dC3ea4guzKDyLaXIP5bf/m56jvVImFjhhT
+OVF Tool:   W2ASbnEUlZIVrEuyVcdG7e3FvZufE553JmHL0YG/0m5bIHXKRzBRx0D3HHOAzOKw
+OVF Tool:   kkOnxJHSTN4Hz8hSYCWvzUAjSYL3Q8qiTd7GHJ2ynsRnu3KlzKUCAQOjga8wgaww
+OVF Tool:   HQYDVR0OBBYEFHg8KQJdm8NPQDmYP41uEgKG+VNwMH0GA1UdIwR2MHSAFHg8KQJd
+OVF Tool:   m8NPQDmYP41uEgKG+VNwoVGkTzBNMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2Fs
+OVF Tool:   aWZvcm5pYTESMBAGA1UEBwwJUGFsbyBBbHRvMRUwEwYDVQQKDAxWTXdhcmUsIElu
+OVF Tool:   Yy6CCQCEf8tNfEYDFzAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQAD
+OVF Tool:   K9uUhsXzpuUcWJq83Vh2HHSxZ/DdR6h+FNYHfEX8h8DOIwhRHhIHoqXkwwnpbjip
+OVF Tool:   FBtSzNKzTmzMQBwB7GwzGSsBO2TU8alX2ssnDg2AqwgIeLzclfaQlYoid678Krew
+OVF Tool:   nFryr9PYMntr7uyU1duesmey12GS2z5UIhA4BaOnrPJcLCP22nXVlPEsa46ob7XH
+OVF Tool:   j4ngZ0ck/qE58Z90GaAuxaa2R3OlHQ+AhXc3q5IixqMDa0MLPd41Qv2kC5iZ+tCf
+OVF Tool:   XVdlf4/RqQBNHR8FFVxcjpaROId9Y9/yHdsMt55nN7pf7vRf5vSk1bHvLmlOYgiR
+OVF Tool:   tAj6rdPq0c+/C+fct1cM
+OVF Tool:   -----END CERTIFICATE-----
+OVF Tool: Opening VI target: vi://esxi1.xkdb.net:443/
+OVF Tool: Deploying to VI: vi://esxi1.xkdb.net:443/
+OVF Tool: Disk progress: 1%OVF Tool: Disk progress: 2%OVF Tool: Disk progress: 3%OVF Tool: Disk progress: 4%OVF Tool: Disk progress: 5%OVF Tool: Disk progress: 6%OVF Tool: Disk progress: 7%OVF Tool: Disk progress: 8%OVF Tool: Disk progress: 9%OVF Tool: Disk progress: 10%OVF Tool: Disk progress: 11%OVF Tool: Disk progress: 12%OVF Tool: Disk progress: 13%OVF Tool: Disk progress: 14%OVF Tool: Disk progress: 15%OVF Tool: Disk progress: 16%OVF Tool: Disk progress: 17%OVF Tool: Disk progress: 18%OVF Tool: Disk progress: 19%OVF Tool: Disk progress: 20%OVF Tool: Disk progress: 21%OVF Tool: Disk progress: 22%OVF Tool: Disk progress: 23%OVF Tool: Disk progress: 24%OVF Tool: Disk progress: 25%OVF Tool: Disk progress: 26%OVF Tool: Disk progress: 27%OVF Tool: Disk progress: 28%OVF Tool: Disk progress: 29%OVF Tool: Disk progress: 30%OVF Tool: Disk progress: 31%OVF Tool: Disk progress: 32%OVF Tool: Disk progress: 33%OVF Tool: Disk progress: 34%OVF Tool: Disk progress: 35%OVF Tool: Disk progress: 36%OVF Tool: Disk progress: 37%OVF Tool: Disk progress: 38%OVF Tool: Disk progress: 39%OVF Tool: Disk progress: 40%OVF Tool: Disk progress: 41%OVF Tool: Disk progress: 42%OVF Tool: Disk progress: 43%OVF Tool: Disk progress: 44%OVF Tool: Disk progress: 45%OVF Tool: Disk progress: 46%OVF Tool: Disk progress: 47%OVF Tool: Disk progress: 48%OVF Tool: Disk progress: 49%OVF Tool: Disk progress: 50%OVF Tool: Disk progress: 51%OVF Tool: Disk progress: 52%OVF Tool: Disk progress: 53%OVF Tool: Disk progress: 54%OVF Tool: Disk progress: 55%OVF Tool: Disk progress: 56%OVF Tool: Disk progress: 57%OVF Tool: Disk progress: 58%OVF Tool: Disk progress: 59%OVF Tool: Disk progress: 60%OVF Tool: Disk progress: 61%OVF Tool: Disk progress: 62%OVF Tool: Disk progress: 63%OVF Tool: Disk progress: 64%OVF Tool: Disk progress: 65%OVF Tool: Disk progress: 66%OVF Tool: Disk progress: 67%OVF Tool: Disk progress: 68%OVF Tool: Disk progress: 69%OVF Tool: Disk progress: 70%OVF Tool: Disk progress: 71%OVF Tool: Disk progress: 72%OVF Tool: Disk progress: 73%OVF Tool: Disk progress: 74%OVF Tool: Disk progress: 75%OVF Tool: Disk progress: 76%OVF Tool: Disk progress: 77%OVF Tool: Disk progress: 78%OVF Tool: Disk progress: 79%OVF Tool: Disk progress: 80%OVF Tool: Disk progress: 81%OVF Tool: Disk progress: 82%OVF Tool: Disk progress: 83%OVF Tool: Disk progress: 84%OVF Tool: Disk progress: 85%OVF Tool: Disk progress: 86%OVF Tool: Disk progress: 87%OVF Tool: Disk progress: 88%OVF Tool: Disk progress: 89%OVF Tool: Disk progress: 90%OVF Tool: Disk progress: 91%OVF Tool: Disk progress: 92%OVF Tool: Disk progress: 93%OVF Tool: Disk progress: 94%OVF Tool: Disk progress: 95%OVF Tool: Disk progress: 96%OVF Tool: Disk progress: 97%OVF Tool: Disk progress: 98%OVF Tool: Disk progress: 99%
+OVF Tool: Transfer Completed
+OVF Tool: Powering on VM: vCenter-Server-Appliance
+OVF Tool: Task progress: 0%OVF Tool: Task progress: 25%
+OVF Tool: Task Completed
+OVF Tool: Waiting for IP address...
+OVF Tool: Received IP address: fe80::250:56ff:fe9a:482f
+OVF Tool: Completed successfully
+ [SUCCEEDED] Successfully executed Task 'Deploying vCenter Server Appliance' in TaskFlow 'vcenter.xkdb.net.vCSA_on_ESXi' at
+01:57:55
+============== [START] Start executing Task: Monitor the entire VCSA deployment using appliance REST API at 01:57:56 ==============
+Checking if the target VCSA is powered on and ready for operations...
+Successfully verified that the target VCSA 'vCenter-Server-Appliance' has been powered on and is now ready for operations
+Checking if the target VCSA appliance API is available for query
+The certificate of server '[fe80::250:56ff:fe9a:482f]' will not be verified because you have provided either the
+'--no-ssl-certificate-verification' or '--no-esx-ssl-verify' command parameter, which disables verification for all certificates.
+Remove this parameter from the command line if you want server certificates to be verified.
+The certificate of server '10.1.10.43' will not be verified because you have provided either the
+'--no-ssl-certificate-verification' or '--no-esx-ssl-verify' command parameter, which disables verification for all certificates.
+Remove this parameter from the command line if you want server certificates to be verified.
+Successfully verified that the target VCSA appliance API is available for query
+Start monitoring target VCSA deployment, deployment status will be written into:
+/tmp/vcsaCliInstaller-2023-02-03-01-50-j5ym28vs/workflow_1675389037047/vcenter.xkdb.net.vCSA_on_ESXi/vcsa_deployment.json
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(RUNNING 60/100)  -
+Installed VMware-Postgres-libs-13.8.0-20449095.x86_64.rpm
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(RUNNING 74/100)  -
+Installed VMware-hvc-7.0.3.01200-10685327.x86_64.rpm
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(RUNNING 83/100)  -
+Installed vmware-vsm-7.0.3.01200-10685327.x86_64.rpm
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(RUNNING 84/100)  -
+Installed VMware-wcp-0.0.20-20542423.x86_64.rpm
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(RUNNING 84/100)  -
+Installed VMware-wcp-0.0.20-20542423.x86_64.rpm
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(RUNNING 0/100)    -
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(RUNNING 0/100)    -
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(RUNNING 0/100)    -
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(RUNNING 0/100)    -
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 25/100)   - Exporting data from source system...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 26/100)   - Exporting VMware Service Lifecycle Manager data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 37/100)   - Exporting VMware vSphere ESXi Dump Collector
+data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 43/100)   - Exporting VMware vCenter Server Database data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 43/100)   - Exporting VMware vCenter Server Database data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 43/100)   - Exporting VMware vCenter Server Database data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 45/100)   - Exporting VMware vCenter Server Database data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 50/100)   - Exporting VMware vCenter Single Sign-On data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 50/100)   - Exporting VMware vCenter Single Sign-On data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 50/100)   - Exporting VMware vCenter Single Sign-On data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 50/100)   - Shutting down source machine...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(RUNNING 50/100)   - Shutting down source machine...
+VCSA Deployment is still running
+The certificate of server '10.1.10.54' will not be verified because you have provided either the
+'--no-ssl-certificate-verification' or '--no-esx-ssl-verify' command parameter, which disables verification for all certificates.
+Remove this parameter from the command line if you want server certificates to be verified.
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 4/100)     - Starting VMware Authentication Framework...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 10/100)    - Starting VMware Postgres...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 18/100)    - Starting VMware Postgres Archiver...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 22/100)    - Starting VMware Security Token Service...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 22/100)    - Starting VMware Security Token Service...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 30/100)    - Starting VMware vAPI Endpoint...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 34/100)    - Starting VMware vCenter-Services...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 40/100)    - Starting VMware Infraprofile Service...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 53/100)    - Starting VMware Topology Service...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 57/100)    - Starting VMware vCenter Server...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 57/100)    - Starting VMware vCenter Server...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 57/100)    - Starting VMware vCenter Server...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 57/100)    - Starting VMware vCenter Server...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 65/100)    - Starting VMware ESX Agent Manager...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 69/100)    - Starting VMware vSphere Profile-Driven Storage Service...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 77/100)    - Starting VMware vSphere Authentication Proxy...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 81/100)    - Starting VMware vService Manager...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 91/100)    - Starting VMware Content Library Service...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(RUNNING 93/100)    - Starting VMware Image Builder Manager...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(SUCCEEDED 100/100) - Task has completed successfully.         Task: Import data into
+appliance.(RUNNING 1/100)        - Stopping VMware Content Library Service services...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(SUCCEEDED 100/100) - Task has completed successfully.         Task: Import data into
+appliance.(RUNNING 30/100)       - Importing VMware vSphere ESXi Dump Collector data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(SUCCEEDED 100/100) - Task has completed successfully.         Task: Import data into
+appliance.(RUNNING 37/100)       - Importing VMware vCenter Server data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(SUCCEEDED 100/100) - Task has completed successfully.         Task: Import data into
+appliance.(RUNNING 50/100)       - Importing VMware vSphere Profile-Driven Storage Service data...
+VCSA Deployment is still running
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(SUCCEEDED 100/100) - Task has completed successfully.         Task: Import data into
+appliance.(RUNNING 62/100)       - Executing VMware vCenter Server High-Availability post upgrade actions...
+VCSA Deployment is still running
+If using Auto Deploy, update the DHCP settings and update the TFTP settings with the new set of tramp files from the new Auto
+Deploy server.
+vSphere 7.0 disables the TLS 1.0 and TLS 1.1 protocols for improved security. Note: Some applications might support only the older
+protocols. To revert to the less secure TLS 1.0 and TLS 1.1 protocols, run the TLS Reconfigurator tool. Tool location: vCenter
+Server Appliance: /usr/lib/vmware-TlsReconfigurator/VcTlsReconfigurator See https://kb.vmware.com/kb/2147469 for details.
+==========VCSA Deployment Progress Report==========         Task: Install required RPMs for the appliance.(SUCCEEDED 100/100)
+- Task has completed successfully.         Task: Run appliance precheck.(SUCCEEDED 100/100)        - Task has completed
+successfully.         Task: Export existing appliance data.(SUCCEEDED 100/100)        - Task has completed successfully.
+Task: Run firstboot scripts.(SUCCEEDED 100/100) - Task has completed successfully.         Task: Import data into
+appliance.(SUCCEEDED 100/100)    - Task has completed successfully.
+Successfully completed VCSA deployment.  VCSA Deployment Start Time: 2023-02-03T01:58:42.748Z VCSA Deployment End Time:
+2023-02-03T02:31:37.029Z
+ [SUCCEEDED] Successfully executed Task 'MonitorDeploymentTask: Monitoring Deployment' in TaskFlow 'vcenter.xkdb.net.vCSA_on_ESXi'
+at 02:32:44
+Monitoring VCSA Deploy task completed
+================== [START] Start executing Task: Provide the login information about new appliance. at 02:33:13 ==================
+    Appliance Name: vCenter-Server-Appliance
+    System Name: vcenter.xkdb.net
+    System IP: 10.1.10.54
+    Log in as: Administrator@vsphere.local
+The vCenter Server will currently be in the evaluation-mode
+ [SUCCEEDED] Successfully executed Task 'ApplianceLoginSummaryTask: Provide appliance login information.' in TaskFlow
+'vcenter.xkdb.net.vCSA_on_ESXi' at 02:33:26
+============================================================ 02:33:53 ============================================================
+Result and Log File Information...
+WorkFlow log directory: /tmp/vcsaCliInstaller-2023-02-03-01-50-j5ym28vs/workflow_1675389037047

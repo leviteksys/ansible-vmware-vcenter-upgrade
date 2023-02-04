@@ -1,0 +1,106 @@
+{
+    "__version": "2.13.0",
+    "__comments": [
+            "Sample template to upgrade vCenter Server Appliance 6.7 with an external Platform Services Controller to a vCenter Server Appliance 7.0 with an embedded Platform Services Controller.",
+            "After a successful convergence upgrade, you can no longer use the external Platform Services Controller.",
+            "You must decommission the external Platform Services Controller using the cmsso-util command. To learn more, see KB 2106736: https://kb.vmware.com/s/article/2106736"
+        ],
+    "new_vcsa": {
+        "esxi": {
+            "hostname": "{{ source_esxi_fqdn }}",
+            "username": "{{ source_esxi_username }}",
+            "password": "{{ source_esxi_password }}",
+            "deployment_network": "{{ source_esxi_deployment_network }}",
+            "datastore": "{{ source_esxi_datastore }}" 
+        },
+        "appliance": {
+            "__comments": [
+                "You must provide the 'deployment_option' key with a value, which will affect the vCenter Server Appliance's configuration parameters, such as the vCenter Server Appliance's number of vCPUs, the memory size, the storage size, and the maximum numbers of ESXi hosts and VMs which can be managed. For a list of acceptable values, run the supported deployment sizes help, i.e. vcsa-deploy --supported-deployment-sizes"
+            ],
+            "thin_disk_mode": {{ thin_disk_mode | lower }},
+            "deployment_option": "{{ deployment_option }}",
+            "name": "{{ new_vcsa_name }}"
+        },
+        "os": {
+            "ssh_enable": {{ ssh_enable | lower }}
+        },
+        "temporary_network": {
+            "ip_family": "{{ ip_family }}",
+            "mode": "static",
+            "ip": "{{ temp_build_ip }}",
+            "prefix": "{{ prefix }}", 
+            "gateway": "{{ gateway }}",
+            "dns_servers": [
+               "{{ dns_servers }}" 
+            ]
+        },
+        "user_options": {
+            "__comments": [
+			    "Select the data that you want to copy from the source vCenter Server.",
+				"'core' = 'Configuration and Inventory',",
+				"'core_events_tasks' = 'Configuration, Inventory, Tasks and Events'",
+				"'all' = 'Configuration Inventory, Tasks, Events and Performance Metrics'"
+			],
+            "vcdb_migrateSet": "{{ vcdb_migrateSet }}"
+        },
+        "sso": {
+            "__comments": [
+                 "Important: The information in this section will change the topology of your deployment. Refer to the vSphere documentation for more information.",
+                 "Set first_instance to true if this is the first converge upgrade operation in your vCenter Server SSO domain or if you do not want to set the replication partner for this node.",
+                 "If you want to set the replication partner for this node set first_instance to false and provide value of replication_partner_hostname as FQDN of a previously",
+                 "converged node which is currently in a embedded vCenter Server topology"
+            ],
+            "first_instance": true
+        }
+    },
+    "source_vc": {
+        "description": {
+            "__comments": [
+                "This section describes the source appliance which you want to",
+                "upgrade and the ESXi host on which the appliance is running. "
+            ]
+        },
+        "managing_esxi_or_vc": {
+            "hostname": "{{ destination_esxi_fqdn }}",
+            "username": "{{ destination_esxi_username }}",
+            "password": "{{ destination_esxi_password }}"
+        },
+        "vc_vcsa": {
+            "hostname": "{{ destination_vcsa_fqdn }}",
+            "username": "{{ destination_vcsa_username }}", 
+            "password": "{{ destination_vcsa_password }}", 
+            "root_password": "{{ destination_vcsa_root_password }}"
+        }
+    },
+    "ceip": {
+        "description": {
+            "__comments": [
+                "++++VMware Customer Experience Improvement Program (CEIP)++++",
+                "VMware's Customer Experience Improvement Program (CEIP) ",
+                "provides VMware with information that enables VMware to ",
+                "improve its products and services, to fix problems, ",
+                "and to advise you on how best to deploy and use our ",
+                "products. As part of CEIP, VMware collects technical ",
+                "information about your organization's use of VMware ",
+                "products and services on a regular basis in association ",
+                "with your organization's VMware license key(s). This ",
+                "information does not personally identify any individual. ",
+                "",
+                "Additional information regarding the data collected ",
+                "through CEIP and the purposes for which it is used by ",
+                "VMware is set forth in the Trust & Assurance Center at ",
+                "http://www.vmware.com/trustvmware/ceip.html . If you ",
+                "prefer not to participate in VMware's CEIP for this ",
+                "product, you should disable CEIP by setting ",
+                "'ceip_enabled': false. You may join or leave VMware's ",
+                "CEIP for this product at any time. Please confirm your ",
+                "acknowledgement by passing in the parameter ",
+                "--acknowledge-ceip in the command line.",
+                "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            ]
+        },
+        "settings": {
+            "ceip_enabled": {{ ceip_enabled | lower }}
+        }
+    }
+}

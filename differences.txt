@@ -1,0 +1,27 @@
+Differences betwen working json and ours
+
+General:  Working one tends to have a space after the colon, and square brackets around every comment.  The nonworking one
+doesn't have square brackets around the first comment.
+
+new_vcsa:
+
+"name" is generic in working template, and set to the actual name (also tried appending V7) in ours
+
+temporary_network is set to ipv4 static in working template, so dhcp is not important
+
+deployment_network is "vSwitch0" in ours and "VM Network" in working.
+
+user options is all in both cases.
+
+working template includes sso in new vcsa
+
+"sso": {
+            "__comments": [
+                 "Important: The information in this section will change the topology of your deployment. Refer to the vSphere documentation for more information.",
+                 "Set first_instance to true if this is the first converge upgrade operation in your vCenter Server SSO domain or if you do not want to set the replication partner for this node.",
+                 "If you want to set the replication partner for this node set first_instance to false and provide value of replication_partner_hostname as FQDN of a previously",
+                 "converged node which is currently in a embedded vCenter Server topology"
+            ],
+            "first_instance": true
+        }
+

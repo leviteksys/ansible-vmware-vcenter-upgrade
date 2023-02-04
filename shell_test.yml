@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: True
+
+  tasks:
+  # testing shel
+  #
+    - name: shell test
+      ansible.builtin.shell: ls -ldt . >> mylog.txt
+      args:
+        chdir: /tmp
+        creates: mylog.txt

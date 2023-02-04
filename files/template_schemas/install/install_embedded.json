@@ -1,0 +1,422 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://vmware.com/schemas/vcsa-cli-installer/install/install_embedded.json",
+  "type": "dict",
+  "properties": {
+    "__version": {
+      "type": "string",
+      "default": "2.13.0"
+    },
+    "__comments": ["Template schema for deploying a vCenter Server Appliance ",
+                   "with an embedded Platform Services Controller."],
+    "new_vcsa": {
+      "type": "dict",
+      "properties": {
+        "esxi": {
+          "type": "dict",
+          "properties": {
+            "hostname": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "port": {
+              "type": "int",
+              "default": 443
+            },
+            "ssl_certificate_verification": {
+              "type": "dict",
+              "properties": {
+                "thumbprint": {
+                  "type": "string"
+                },
+                "verification_mode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                {
+                  "oneOf": [
+                    "thumbprint",
+                    "verification_mode"
+                  ]
+                }
+              ]
+            },
+            "username": {
+              "type": "string",
+              "default": "root"
+            },
+            "password": {
+              "type": "string",
+              "default": ""
+            },
+            "deployment_network": {
+              "type": "string",
+              "default": "VM Network"
+            },
+            "datastore": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "target": {
+              "type": {
+                "oneOf": [
+                  "string",
+                  "list"
+                ]
+              }
+            },
+            "VCSA_cluster": {
+              "type": "dict",
+              "properties": {
+                "datacenter": {
+                  "type": "string",
+                  "default": ""
+                },
+                "cluster": {
+                  "type": "string",
+                  "default": ""
+                },
+                "compression_only": {
+                  "type": "bool",
+                  "default": false
+                },
+                "deduplication_and_compression": {
+                  "type": "bool",
+                  "default": false
+                },
+                "disks_for_vsan": {
+                  "type": "dict",
+                  "properties": {
+                    "cache_disk": {
+                      "type": {
+                        "oneOf": [
+                          "string",
+                          "list"
+                        ]
+                      }
+                    },
+                    "capacity_disk": {
+                      "type": {
+                        "oneOf": [
+                          "string",
+                          "list"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "enable_vlcm": {
+                  "type": "bool"
+                }
+              }
+            }
+          },
+          "required": [
+            "hostname",
+            "username",
+            "datastore"
+          ]
+        },
+        "vc": {
+          "type": "dict",
+          "properties": {
+            "hostname": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "port": {
+              "type": "int",
+              "default": 443
+            },
+            "ssl_certificate_verification": {
+              "type": "dict",
+              "properties": {
+                "thumbprint": {
+                  "type": "string"
+                },
+                "verification_mode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                {
+                  "oneOf": [
+                    "thumbprint",
+                    "verification_mode"
+                  ]
+                }
+              ]
+            },
+            "username": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "password": {
+              "type": "string",
+              "default": ""
+            },
+            "deployment_network": {
+              "type": "string",
+              "default": "VM Network"
+            },
+            "datacenter": {
+              "type": {
+                "oneOf":[
+                  "string",
+                  "list"
+                  ]
+                },
+                "default": "Datacenter"
+            },
+            "datastore": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "target": {
+              "type": {
+                "oneOf":[
+                  "string",
+                  "list"
+                ]
+              },
+              "default": "Required, but this value has not been provided."
+            },
+            "vm_folder": {
+              "type": {
+                "oneOf":[
+                  "string",
+                  "list"
+                ]
+              }
+            }
+          },
+          "required": [
+            "hostname",
+            "username",
+            "datacenter",
+            "datastore",
+            "target"
+          ]
+        },
+        "appliance": {
+          "type": "dict",
+          "properties": {
+            "thin_disk_mode": {
+              "type": "bool",
+              "default": true
+            },
+            "deployment_option": {
+              "type": "string",
+              "default": "small"
+            },
+            "name": {
+              "type": "string",
+              "default": "Embedded-vCenter-Server-Appliance"
+            },
+            "image": {
+              "type": "string"
+            },
+            "image_url_ssl_certificate_verification": {
+              "type": "dict",
+              "properties": {
+                "thumbprint": {
+                  "type": "string"
+                },
+                "verification_mode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                {
+                  "oneOf": [
+                    "thumbprint",
+                    "verification_mode"
+                  ]
+                }
+              ]
+            },
+            "ovftool_path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "thin_disk_mode",
+            "deployment_option",
+            "name"
+          ]
+        },
+        "ovftool_arguments": {
+          "type": "dict"
+        },
+        "network": {
+          "type": "dict",
+          "properties": {
+            "ip_family": {
+              "type": "string",
+              "default": "ipv4"
+            },
+            "mode": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "ip": {
+              "type": "string"
+            },
+            "dns_servers": {
+              "type": {
+                "oneOf":[
+                  "string",
+                  "list"
+                ]
+              }
+            },
+            "prefix": {
+              "type": "string"
+            },
+            "gateway": {
+              "type": "string"
+            },
+            "ports": {
+              "type": "dict"
+            },
+            "system_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "mode"
+          ]
+        },
+        "os": {
+          "type": "dict",
+          "properties": {
+            "password": {
+              "type": "string",
+              "default": ""
+            },
+            "ssh_enable": {
+              "type": "bool",
+              "default": false
+            },
+            "time_tools_sync": {
+              "type": "bool",
+              "default": false
+            },
+            "ntp_servers": {
+              "type": {
+                "oneOf": [
+                  "string",
+                  "list"
+                ]
+              }
+            }
+          },
+          "required": [
+            {
+             "oneOf": [
+                "time_tools_sync",
+                "ntp_servers"
+                ]
+            }
+          ]
+        },
+        "sso": {
+          "type": "dict",
+          "properties": {
+            "password": {
+              "type": "string",
+              "default": ""
+            },
+            "domain_name": {
+              "type": "string",
+              "default": "vsphere.local"
+            },
+            "sso_port": {
+              "type": "int",
+              "default": 443
+            },
+            "ssl_certificate_verification": {
+              "type": "dict",
+              "properties": {
+                "thumbprint": {
+                  "type": "string"
+                },
+                "verification_mode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                {
+                  "oneOf": [
+                    "thumbprint",
+                    "verification_mode"
+                  ]
+                }
+              ]
+            },
+            "first_instance": {
+               "type": "bool",
+               "default": false
+            },
+            "replication_partner_hostname": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          "required": [
+            "domain_name"
+          ]
+        }
+      },
+      "required": [
+        {
+         "oneOf": [
+            "esxi",
+            "vc"
+            ]
+        },
+        "appliance",
+        "network",
+        "os",
+        "sso"
+      ]
+    },
+    "ceip": {
+      "type": "dict",
+      "properties": {
+        "description": {
+          "type": "dict",
+          "properties": {
+            "__comments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "settings": {
+          "type": "dict",
+          "properties": {
+            "ceip_enabled": {
+              "type": "bool",
+              "default": true
+            }
+          },
+          "required": [
+            "ceip_enabled"
+          ]
+        }
+      },
+      "required": [
+        "settings"
+      ]
+    }
+   },
+  "required": [
+    "__version",
+    "new_vcsa",
+    "ceip"
+  ]
+}

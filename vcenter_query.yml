@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  gather_facts: True
+  vars:
+    vcenter_hostname: vcenter.xkdb.net
+    vcenter_username: "Administrator@vsphere.local"
+    vcenter_password: "TekGurus-2023"
+      #    vcenter_datacenter: Primary-Datacenter
+    vcenter_validate_certs: false
+    ignore_warnings: True
+
+
+  tasks:
+  # Using vmware_vcenter_upgrade module
+  #
+    - name: Get data
+      vmware_vcenter_upgrade:
+        hostname: '{{ vcenter_hostname }}'
+        username: Administrator@vsphere.local
+        password: TekGurus-2023
+          #        datacenter: '{{ vcenter_datacenter }}'
+        validate_certs: "{{ vcenter_validate_certs }}"
+        ignore_warnings: True
+        action: 'query'
+      delegate_to: localhost
+
+    - name: print VM info
+      ansible.builtin.debug:
+        var: detailed_vm_info

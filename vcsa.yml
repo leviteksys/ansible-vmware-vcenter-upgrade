@@ -1,0 +1,56 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    source_esxi_fqdn: "esxi1.xkdb.net" 	      #	This is the FQDN of the esxi source
+    source_esxi_username: "root"	      # This is usually set to root, but could be an admin account
+    source_esxi_password: "TekGurus2023"      # This is the password for the above account
+    source_esxi_deployment_network: "VM Network" # This is the network the ESXI source is on, defaults to "VM Network"
+    source_esxi_datastore: "datastore1"       # This is the datastore where the ESXi server is located, defaults to "datastore1"
+    thin_disk_mode: true	              # This the disk mode of the new VCSA machine, defaults to true
+    deployment_option: small	              # This is the deployment_option for VCSA supporting size, defaults to small
+    new_vcsa_name: "vCenter-Server-Appliance" # This is the VCSA name of the v7 VCSA appliance, defaults to "vCenter-Server-Appliance"
+    ssh_enable: true		              # BOOLEAN: Do we want to enable ssh for the VCSA?  defaults to true
+    ip_family: "ipv4"                         # Can be ipv4 or ipv6, defaults to ipv4
+    mode: "static"                            # Can be set to static or dhcp.  Only static is supported at this time
+    temp_build_ip: "10.1.10.43"               # Temporary IP used for doing upgrades
+    prefix: "23"                              # Number of host bits for the host piece of the netmask, defaults to 24
+    gateway: "10.1.10.1"                      # Gateway IP subnet
+    dns_servers: "10.1.10.59"                 # dns servers, separated by comma, suggest only one
+    first_instance: true                      # BOOLEAN: Set to true if this is the first instance of the vcenter
+#   replication_partner_hostname: "<Host name of the replication partner. Remove if this is the first_instance.>"
+    destination_esxi_fqdn: "esxi1.xkdb.net"    # Destination ESXi fdqn, usually the same as the source
+    destination_esxi_username: "root"         # Destination admin account, usually root, usually same as the source
+    destination_esxi_password: "TekGurus2023" # Destination admin account PW, usually same as the source
+    destination_vcsa_fqdn: "vcenter.xkdb.net" # Destination FQDN of the new VCSA, usually same as the original since it imports the config from the old device
+    destination_vcsa_username: "administrator@vsphere.local" # Destination VCSA admin user name, usually administrator@vsphere.local
+    destination_vcsa_password: "TekGurus-2023!"	# Destination VCSA admin user password
+    destination_vcsa_root_password: "TekGurus-2023" # Destination VCSA root password for ssh access
+    ceip_enabled: false			        # BOOLEAN:  Send CEIP data to vmware?  defaults to false
+    vcdb_migrateSet: "all"
+
+    ansible_python_interpreter: /usr/bin/python3 #required if getting errors related to python not being found
+    ansible_debug: true
+    ansible_verbosity: 2
+#  vars_files:
+#- idrac_data.yml
+
+  tasks:
+    #    - name: Install libnsl if it is missing
+    #  become: yes
+    #  become_user: root 
+    #  become_method: sudo
+    #  ansible.builtin.dnf:
+    #    name: libnsl
+    #    state: present
+    #     
+    - name: Write out vCSA_on_ESXi.json file from template to output file
+      template:
+        src: templates/vCSA_on_ESXi.json.template
+        dest: files/lin64/{{ destination_vcsa_fqdn }}.vCSA_on_ESXi.json 
+
+
+    - name: run the vendor provided 6.7 to 7.0u3 update script against generated template
+      raw: "cd files/lin64; echo $PWD > /tmp/pwd.txt ;  ./vcsa-deploy upgrade ./{{ destination_vcsa_fqdn }}.vCSA_on_ESXi.json --accept-eula --no-ssl-certificate-verification > ./{{ destination_vcsa_fqdn }}-vcsa-deploy-log.txt"
+      #raw: "cd files/lin64; echo $PWD > /tmp/pwd.txt ;  ./vcsa-deploy upgrade ./{{ destination_vcsa_fqdn }}.vCSA_on_ESXi.json --precheck-only --accept-eula --no-ssl-certificate-verification > /tmp/vcsa-deploy.txt"

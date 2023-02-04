@@ -1,0 +1,490 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://vmware.com/schemas/vcsa-cli-installer/upgrade/upgrade_embedded.json",
+  "type": "dict",
+  "properties": {
+    "__version": {
+      "type": "string",
+      "default": "2.13.0"
+    },
+    "__comments": ["Template schema to upgrade a vCenter Server Appliance ",
+                   "with an embedded Platform Services Controller to a ",
+                   "vCenter Server Appliance @@VC_VERSION@@ with an embedded ",
+                   "Platform Services Controller."],
+    "new_vcsa": {
+      "type": "dict",
+      "properties": {
+        "esxi": {
+          "type": "dict",
+          "properties": {
+            "hostname": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "port": {
+              "type": "int",
+              "default": 443
+            },
+            "ssl_certificate_verification": {
+              "type": "dict",
+              "properties": {
+                "thumbprint": {
+                  "type": "string"
+                },
+                "verification_mode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                {
+                  "oneOf": [
+                    "thumbprint",
+                    "verification_mode"
+                  ]
+                }
+              ]
+            },
+            "username": {
+              "type": "string",
+              "default": "root"
+            },
+            "password": {
+              "type": "string",
+              "default": ""
+            },
+            "datastore": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "deployment_network": {
+              "type": "string",
+              "default": "VM Network"
+            },
+            "target": {
+              "type": {
+                "oneOf":[
+                  "string",
+                  "list"
+                ]
+              }
+            }
+          },
+            "required": [
+              "hostname",
+              "username",
+              "datastore"
+            ]
+          },
+          "vc": {
+            "type": "dict",
+            "properties": {
+              "hostname": {
+                "type": "string",
+                "default": "Required, but this value has not been provided."
+              },
+              "port": {
+                "type": "int",
+                "default": 443
+              },
+               "ssl_certificate_verification": {
+                "type": "dict",
+                "properties": {
+                  "thumbprint": {
+                    "type": "string"
+                  },
+                  "verification_mode": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  {
+                    "oneOf": [
+                      "thumbprint",
+                      "verification_mode"
+                    ]
+                  }
+                ]
+              },
+              "username": {
+                "type": "string",
+                "default": "Required, but this value has not been provided."
+              },
+              "password": {
+                "type": "string",
+                "default": ""
+              },
+              "datacenter": {
+                "type": {
+                  "oneOf": [
+                    "string",
+                    "list"
+                  ]
+                },
+                "default": "Datacenter"
+              },
+              "datastore": {
+                "type": "string",
+                "default": "Required, but this value has not been provided."
+              },
+              "deployment_network": {
+                "type": "string",
+                "default": "VM Network"
+              },
+              "target": {
+                "type": {
+                  "oneOf": [
+                    "string",
+                    "list"
+                  ]
+                },
+                "default": "Required, but this value has not been provided."
+              },
+              "vm_folder": {
+                "type": {
+                  "oneOf":[
+                    "string",
+                    "list"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "hostname",
+              "username",
+              "datacenter",
+              "datastore",
+              "target"
+            ]
+          },
+          "appliance": {
+            "type": "dict",
+            "properties": {
+              "thin_disk_mode": {
+                "type": "bool",
+                "default": true
+              },
+              "deployment_option": {
+                "type": "string",
+                "default": "small"
+              },
+              "name": {
+                "type": "string",
+                "default": "Embedded-vCenter-Server-Appliance"
+              },
+              "image": {
+                "type": "string"
+              },
+              "image_url_ssl_certificate_verification": {
+                "type": "dict",
+                "properties": {
+                  "thumbprint": {
+                    "type": "string"
+                  },
+                  "verification_mode": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  {
+                    "oneOf": [
+                      "thumbprint",
+                      "verification_mode"
+                    ]
+                  }
+                ]
+              },
+              "ovftool_path": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "thin_disk_mode",
+              "deployment_option",
+              "name"
+            ]
+          },
+          "os": {
+            "type": "dict",
+            "properties": {
+              "password": {
+                "type": "string",
+                "default": ""
+              },
+              "ssh_enable": {
+                "type": "bool",
+                "default": false
+             }
+            }
+          },
+          "ovftool_arguments": {
+            "type": "dict"
+          },
+          "temporary_network": {
+            "type": "dict",
+            "properties": {
+              "ip_family": {
+                "type": "string",
+                "default": "ipv4"
+              },
+              "mode": {
+                "type": "string",
+                "default": "Required, but this value has not been provided."
+              },
+              "ip": {
+                "type": "string"
+              },
+              "dns_servers": {
+                "type": {
+                  "oneOf": [
+                    "string",
+                    "list"
+                  ]
+                }
+              },
+              "prefix": {
+                "type": "string"
+              },
+              "gateway": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "user_options": {
+            "type": "dict",
+            "properties": {
+              "vcdb_migrateSet": {
+                "type": "string",
+                "default": "all"
+              }
+            }
+          },
+        "sso": {
+          "type": "dict",
+          "properties": {
+               "site_name": {
+                 "type": "string"
+               },
+               "first_instance": {
+                 "type": "bool",
+                 "default": false
+                },
+               "replication_partner_hostname": {
+                 "type": "string",
+                 "default": ""
+                }
+            }
+        }
+      },
+      "required": [
+        {
+         "oneOf": [
+            "esxi",
+            "vc"
+            ]
+        },
+        "appliance",
+        "os",
+        "temporary_network"
+      ]
+    },
+    "source_vc": {
+      "type": "dict",
+      "properties": {
+        "managing_esxi_or_vc": {
+          "type": "dict",
+          "properties": {
+            "hostname": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "port": {
+              "type": "int",
+              "default": 443
+            },
+            "ssl_certificate_verification": {
+              "type": "dict",
+              "properties": {
+                "thumbprint": {
+                  "type": "string"
+                },
+                "verification_mode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                {
+                  "oneOf": [
+                    "thumbprint",
+                    "verification_mode"
+                  ]
+                }
+              ]
+            },
+            "username": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "password": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          "required": [
+            "hostname",
+            "username"
+          ]
+        },
+        "vc_vcsa": {
+          "type": "dict",
+          "properties": {
+            "hostname": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "username": {
+              "type": "string",
+              "default": "administrator@<SSO domain name>"
+            },
+            "password": {
+              "type": "string",
+              "default": ""
+            },
+            "root_password": {
+              "type": "string",
+              "default": ""
+            },
+            "export_dir": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          "required": [
+            "hostname",
+            "username"
+          ]
+        }
+      },
+      "required": [
+        "managing_esxi_or_vc",
+        "vc_vcsa"
+      ]
+    },
+    "source_vum": {
+      "type": "dict",
+      "properties": {
+        "run_migration_assistant": {
+          "type": "dict",
+          "properties": {
+            "__comments": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "default": "Required, but this value has not been provided."
+              }
+            },
+            "esxi_hostname": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "esxi_username": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "esxi_password": {
+              "type": "string",
+              "default": ""
+            },
+            "esxi_port": {
+              "type": "int",
+              "default": 443
+            },
+            "esxi_ssl_certificate_verification": {
+              "type": "dict",
+              "properties": {
+                "thumbprint": {
+                  "type": "string"
+                },
+                "verification_mode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                {
+                  "oneOf": [
+                    "thumbprint",
+                    "verification_mode"
+                  ]
+                }
+              ]
+            },
+            "vum_hostname": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "vum_os_username": {
+              "type": "string",
+              "default": "Required, but this value has not been provided."
+            },
+            "vum_os_password": {
+              "type": "string",
+              "default": ""
+            },
+            "migration_port": {
+              "type": "int",
+              "default": 9123
+            },
+            "export_dir": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "esxi_hostname",
+            "esxi_username",
+            "vum_hostname",
+            "vum_os_username"
+          ]
+        }
+      }
+    },
+    "ceip": {
+      "type": "dict",
+      "properties": {
+        "description": {
+          "type": "dict",
+          "properties": {
+            "__comments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "settings": {
+          "type": "dict",
+          "properties": {
+            "ceip_enabled": {
+              "type": "bool",
+              "default": true
+            }
+          },
+          "required": [
+            "ceip_enabled"
+          ]
+        }
+      },
+      "required": [
+        "settings"
+      ]
+    }
+  },
+  "required": [
+    "__version",
+    "new_vcsa",
+    "source_vc",
+    "ceip"
+  ]
+}

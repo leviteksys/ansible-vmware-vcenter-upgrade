@@ -1,0 +1,7 @@
+  - name: list vmware vcenter upgrade information
+      vmware_vcenter_upgrade:
+        hostname: '{{ vcenter_hostname }}'
+        username: '{{ vcenter_username }}'
+        password: '{{ vcenter_password }}'
+        action:   'query'
+    delegate_to: localhost

@@ -1,0 +1,12 @@
+prefix=/build/mts/release/bora-20500328/publish/lin64
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib64
+includedir=${prefix}/include
+
+Name: expat
+Version: 2.4.9
+Description: expat XML parser
+URL: https://libexpat.github.io/
+Libs: -L${libdir} -lexpat
+Libs.private: -lm
+Cflags: -I${includedir}

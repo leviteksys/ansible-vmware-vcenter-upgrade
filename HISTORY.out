@@ -1,0 +1,970 @@
+   23  vi vcenter_upgrade.yml 
+   24  ansible-playbook vcenter_upgrade.yml 
+   25  vi vcenter_upgrade.yml 
+   26  ansible-playbook vcenter_upgrade.yml 
+   27  ls
+   28  ansible-playbook vcenter_upgrade.yml 
+   29  ls
+   30  vi vcenter_upgrade.yml 
+   31  history | grep -i git
+   32  git push
+   33  git push --set-upstream ron-vmware-branch
+   34  man git
+   35  git branch -a
+   36  git status
+   37  git config user.name me@ronaldchristian.com
+   38  git config user.email me@ronaldchristian.com
+   39  git config user.name Ron
+   40  git push --set-upstream ron-vmware-branch
+   41  history | grep -i git
+   42  git config --list
+   43  git user.email=rchristian@teksystems.com
+   44  git config --global user.email "rchristian@teksystems.com"
+   45  git config --list
+   46  pwd
+   47  git branch -a
+   48  ls
+   49  cp vcenter_upgrade.yml ../../.
+   50  ls ../..
+   51  ls -a ../..
+   52  branch -a
+   53  git checkout main
+   54  ls
+   55  git branch -a
+   56  git config --list
+   57  git config --global user.name "Ron"
+   58  git config --global user.email "rchristian@teksystems.com"
+   59  ls
+   60  git config --list
+   61  git config --local --list
+   62  git config --local user.name "Ron"
+   63  git config --local user.email "rchristian@teksystems.com"
+   64  git config --local --list
+   65  git config --global --list
+   66  git status -a
+   67  git status
+   68  git branch -a
+   69  git checkout ron-vmware-branch
+   70  ls
+   71  mv plugins ../../..
+   72  ls
+   73  git checkout ron-vmware-branch
+   74  git branch -a
+   75  git status
+   76  ls
+   77  vi vcenter_upgrade.yml 
+   78  git add .
+   79  git commit
+   80  git status
+   81  git commit
+   82  git push
+   83  git push --set-upstream origin ron-vmware-branch
+   84  ls ../..
+   85  ls
+   86  ls ./..
+   87  history
+   88  history | grep -i gitr
+   89  history | grep -i git
+   90  pwd
+   91  ls
+   92  cd rockwell/
+   93  ls
+   94  ls -a
+   95  cd vsphere
+   96  ls -a
+   97  cd *
+   98  ls
+   99  ls -a
+  100  cd .git
+  101  ls
+  102  cd logs
+  103  ls
+  104  git logs
+  105  git log
+  106  ls
+  107  cd rockwell/
+  108  ls
+  109  cd vsphere
+  110  ls
+  111  cd *
+  112  ls
+  113  vi vcenter_upgrade.yml 
+  114  ansible-playbook -vvv vcenter_upgrade.yml
+  115  k
+  116  set -o vi
+  117  vi vcenter_upgrade.yml 
+  118  ansible-playbook -vvv vcenter_upgrade.yml
+  119  export PYTHONHTTPSVERIFY=0
+  120  set | grep PYTHN
+  121  set | grep PYTHON
+  122  ansible-playbook -vvv vcenter_upgrade.yml
+  123  vi vcenter_upgrade.yml 
+  124  ls
+  125  vi vcenter_upgrade.yml 
+  126  fg
+  127  ansible-playbook -vvv vcenter_upgrade.yml
+  128  vi vcenter_upgrade.yml 
+  129  ansible-playbook -vvv vcenter_upgrade.yml
+  130  vi vcenter_upgrade.yml 
+  131  ls
+  132  diff vmware_vcenter_upgrade.py vmware_vcenter_upgrade.py.broke 
+  133  ls
+  134  mv vmware_vcenter_upgrade.py vmware_vcenter_upgrade.py.nocert
+  135  cp vmware_vcenter_upgrade.py.broke vmware_vcenter_upgrade.py
+  136  ansible-playbook -vvv vcenter_upgrade.yml
+  137  pwd
+  138  ls
+  139  vi vcenter_upgrade.yml
+  140  ansible-playbook -vvv vcenter_upgrade.yml
+  141  ls
+  142  vi vcenter_upgrade.yml
+  143  ansible-playbook -vvv vcenter_upgrade.yml
+  144  ls
+  145  vi vcenter_upgrade.yml
+  146  ansible-playbook -vvv vcenter_upgrade.yml
+  147  vi vcenter_upgrade.yml
+  148  ansible-playbook -vvv vcenter_upgrade.yml
+  149  vi vcenter_upgrade.yml
+  150  ansible-playbook -vvv vcenter_upgrade.yml
+  151  ls
+  152  vi vcenter_upgrade.yml
+  153  ansible-playbook -vvv vcenter_upgrade.yml
+  154  ls
+  155  cp vmware_vcenter_upgrade.py.newsave vmware_vcenter_upgrade.py
+  156  ansible-playbook -vvv vcenter_upgrade.yml
+  157  ls
+  158  vi vcenter_upgrade.yml
+  159  ls
+  160  ansible-docs
+  161  ls
+  162  ansible-docs vmware_vcenter_upgrade.py
+  163  ansible-doc
+  164  ansible-doc vmware_vcenter_upgrade.py
+  165  ls
+  166  cp vcenter_upgrade.yml vcenter_query.yml
+  167  ansible-playbook -vvv vcenter_query.yml
+  168  ansible-playbook vcenter_query.yml
+  169  ls
+  170  vi vcenter_upgrade.yml
+  171  fg
+  172  vi vcenter_upgrade.yml
+  173  ansible-playbook vcenter_upgrade.yml
+  174  ls
+  175  vi vcenter_upgrade.yml
+  176  ansible-playbook vcenter_upgrade.yml
+  177  ssh -l root vcenter.xkdb.net
+  178  ls
+  179  cd rockwell
+  180  ls
+  181  cd vsphere
+  182  ls
+  183  cd *
+  184  ls
+  185  ansible-playbook vcenter_upgrade.yml
+  186  set -o vi
+  187  ansible-playbook vcenter_upgrade.yml
+  188  ls
+  189  ansible-playbook vcenter_query.yml
+  190  ls
+  191  ls -a
+  192  git status
+  193  history | grep -i git
+  194  git branch -a
+  195  git status
+  196  ls
+  197  git add .
+  198  git commit
+  199  push
+  200  git push
+  201  exit
+  202  ssh root@10.1.10.55
+  203  ssh ansible@10.1.10.59
+  204  pwd
+  205  history | grep -i ssh
+  206  ssh root@10.1.10.55
+  207  ls
+  208  vi json.template
+  209  ls
+  210  vi json.template
+  211  pwd
+  212  ls
+  213  cp json.template /tmp
+  214  hostname
+  215  history | grep -i ssh
+  216  ssh -l root vcenter.xkdb.net
+  217  ssh -l root 10.1.10.54
+  218  set -o vi
+  219  ssh -l root 10.1.10.54
+  220  k
+  221  set -o vi
+  222  ssh -l root 10.1.10.54
+  223  history | grep -i 20.54
+  224  history | grep -i 10.54
+  225  ssh root@10.1.10.54
+  226  history | grep -i ssh
+  227  ssh -l root vcenter.xkdb.net
+  228  history | grep -i ssh
+  229  ssh administrator@vcenter.xkdb.net
+  230  ls
+  231  cd rockwell
+  232  ls
+  233  cd vsphere
+  234  ls
+  235  cd *
+  236  ls
+  237  vi requirements.txt
+  238  pwd
+  239  ls plugins
+  240  cd ..
+  241  ls
+  242  cd ..
+  243  ls
+  244  cd vsphere
+  245  ls
+  246  cd ..
+  247  ls
+  248  cd levi-branch/
+  249  ls
+  250  cd *
+  251  ls
+  252  cd ..
+  253  ls
+  254  cd vsphere
+  255  ls
+  256  cd *
+  257  ls
+  258   exit
+  259  ls
+  260  ls teknew
+  261  ls clone
+  262  ls
+  263  ls clone/*
+  264  ls rockwell
+  265  cd rockwell
+  266  sl
+  267  ls
+  268  cd vsphere
+  269  ls
+  270  cd *
+  271  ls
+  272  vi README.md 
+  273   ls
+  274  cat requirements.txt 
+  275  ls plugins/
+  276  history
+  277  history | grep -i vi
+  278  cd /
+  279  cd
+  280  find * -print | grep -i json.template
+  281  ls
+  282  vi json.template
+  283  history
+  284  ls
+  285  find * -print | grep -i vcenter
+  286  cd rockwell/vsphere/ansible-vmware-vcenter-upgrade/
+  287  ls
+  288  vi vcenter_
+  289  vi vcenter_upgrade.yml 
+  290  ls
+  291  sudo su - root
+  292  exit
+  293  ls
+  294  cd rockwell
+  295  ls
+  296  vi vcenter_upgrade.yml 
+  297  cd ..
+  298  ls
+  299  pwd
+  300  ls
+  301  cp json.template /tmp
+  302  chmod ugo+rwx /tmp/json.template 
+  303  ifconfig
+  304  hostname
+  305  ls /tmp
+  306  df -k
+  307  cd /mnt/vmware
+  308  ls
+  309  sftp 
+  310  sftp rchristian@marauder.xkdb.net
+  311  df -k
+  312  umount /dev/loop0
+  313  exit
+  314  history | grep -i ftp
+  315  exit
+  316  ls
+  317  diff json.template /tmp/json.template
+  318  grep TekGurus /tmp/json.template
+  319  ls
+  320  cp json.template /tmp
+  321  ifcofnig
+  322  ifconfig
+  323  ls -ldt /tmp/json.template
+  324  pwd
+  325  id
+  326  ls -ldt /tmp
+  327  ls -ldt /tmp/json*
+  328  ls
+  329  cp json.template /tmp
+  330  cd /tmp
+  331  ls
+  332  vi json.template
+  333  fg
+  334  sudo su - root
+  335  exit
+  336  history | grep -i yum
+  337  exit
+  338  ls
+  339  cd rockwell
+  340  ls
+  341  mv vcenter_upgrade.yml vsphere
+  342  cd vsphere
+  343  ls
+  344  set -o vi
+  345  cd vcenter* ansib*
+  346  ls
+  347  mv vcenter_upgrade.yml ansible-vmware-vcenter-upgrade
+  348  cd ansible-vmware-vcenter-upgrade/
+  349  ls
+  350  mkdir save
+  351  ls -ldt *
+  352  cat vcenter_query.yml
+  353  ls
+  354  ls -ldt *
+  355  vi README.txt
+  356  history | grep -i iso
+  357  fg
+  358  ls
+  359  pwd
+  360  ls /tmp/*json*
+  361  cp /tmp/vCSA_on_ESXi.json .
+  362  cp /tmp/json.template .
+  363  ls
+  364  vi differences.txt
+  365  ls
+  366  ls *json*
+  367  ls
+  368  vi README.txt
+  369  ls -a
+  370  history | grep -i git
+  371  git status -a
+  372  git status
+  373  history | grep -i git
+  374  git branch -a
+  375  git add .
+  376  git commit
+  377  git push
+  378  exit
+  379  ls
+  380  cd rockwell
+  381  sl
+  382  ls
+  383  cd vsphere
+  384  ls -a
+  385  cd *
+  386  ls -a
+  387  vi vCSA_on_ESXi.json 
+  388  vi vcenter.json
+  389  ls *json*
+  390  vi json.template
+  391  ls
+  392  vi vcenter_query.yml
+  393  yum list installed | grep -i nsl
+  394  ls
+  395  hostname
+  396  history | grep -i ssh
+  397  ssh ansible@10.1.10.59
+  398  ssh 10.1.10.55
+  399  exit
+  400  history | grep -i pip
+  401  ls
+  402  cd rockwell
+  403  ls
+  404  cd dellcode1
+  405  ls
+  406  cd *
+  407  ls
+  408  cd idrac-rockwell/
+  409  ls
+  410  ls roles
+  411  cd ../../..
+  412  ls
+  413  cd vsphere/
+  414  ls
+  415  cd *
+  416  ls
+  417  cd /mnt/iso
+  418  ls
+  419  cd /
+  420  exit
+  421  cd /home/ansible
+  422  ls
+  423  cd rockwell
+  424  ls
+  425  cd vsphere
+  426  ls
+  427  cd ansible-vmware-vcenter-upgrade/
+  428  ls
+  429  cd files
+  430  ls
+  431  cd lin64
+  432  ls
+  433  cd ..
+  434  ls
+  435  ls -ald .
+  436  cd templates
+  437  ls
+  438  cd upgrade/
+  439  ls
+  440  cd *7
+  441  ls
+  442  cp vCSA_on_ESXi.json ../../vCSA_on_ESXi.jsan.template
+  443  cd ../../
+  444  ls
+  445  pwd
+  446  cd ..
+  447  ls
+  448  cd ..
+  449  ls
+  450  mv *json*
+  451  mv vCSA_on_ESXi.json files
+  452  cd files
+  453  ls
+  454  rm -rf templates
+  455  ls
+  456  more vCSA_on_ESXi.json 
+  457   vCSA_on_ESXi.json 
+  458  ls
+  459  more vCSA_on_ESXi.json
+  460  ls
+  461  cp vCSA_on_ESXi.json vCSA_on_ESXi.json.template
+  462  cp vCSA_on_ESXi.json vCSA_on_ESXi.json
+  463  vi vCSA_on_ESXi.json vCSA_on_ESXi.json
+  464  ls
+  465  vi *works
+  466  ls
+  467  pwd
+  468  cd ..
+  469  mkdir templates
+  470  cd files
+  471  ls
+  472  mv vCSA_on_ESXi.json.template ../templates
+  473  cd ../templates
+  474  ls
+  475  more *
+  476    ls
+  477  cd ..
+  478  pwd
+  479  exit
+  480  ls
+  481  cd rockwell
+  482  sl
+  483  ls
+  484  cd vsphere
+  485  ls
+  486  cd *
+  487  ls
+  488  cd
+  489  cd files
+  490  ls
+  491  cd files
+  492  ls
+  493  pwd
+  494  cd -
+  495  cd files
+  496  ls
+  497  vi vCSA_on_ESXi.json
+  498  ls
+  499  ls lin64
+  500  pwd
+  501  cd ..
+  502  ls
+  503  cd templates
+  504  ls
+  505  vi *
+  506  ansible --version
+  507  ls
+  508  cd ..
+  509  pwd
+  510  ls
+  511  cp shell_test.yml
+  512  cp vcenter_query.yml shell_test.yml
+  513  vi shell_test.yml
+  514  ansible-playbook shell_test.yml
+  515  ls
+  516  ls -ldt * | more
+  517  vi shell_test.yml
+  518  set -o vi
+  519  vi shell_test.yml
+  520  ansible-playbook shell_test.yml
+  521  vi shell_test.yml
+  522  ansible-playbook shell_test.yml
+  523  vi shell_test.yml
+  524  ansible-playbook shell_test.yml
+  525  vi shell_test.yml
+  526  ansible-playbook shell_test.yml
+  527  vi shell_test.yml
+  528  ansible-playbook shell_test.yml
+  529  exit
+  530  ls
+  531  cd rockwell
+  532  ls
+  533  cd vsphere
+  534  ls
+  535  cd *
+  536  ls
+  537  ls -ldt * | more
+  538  /bin/bash
+  539  exit
+  540  s
+  541  ls
+  542  cd rockwell
+  543  ls
+  544  cd vsphere
+  545  ls
+  546  cd *
+  547  ls
+  548  vi vcenter_upgrade.yml
+  549  cd rockwell/vsphere/ansible-vmware-vcenter-upgrade/
+  550  ls
+  551  vi vCSA_on_ESXi.json
+  552  more README.txt
+  553  pwd
+  554  vi vCSA_on-ESXi.json.template
+  555  cd ..
+  556  cd -
+  557  ls
+  558  cd files
+  559  ls
+  560  vi *template
+  561  chmod 664 *template
+  562  vi *template
+  563  ls
+  564  cd ..
+  565  vi vcenter_upgrade.yml
+  566  vi ansible_to_json.yml 
+  567  vi vcsa.yml
+  568  cd ..
+  569  ls
+  570  cd ..
+  571  ls
+  572  cd levi-branch
+  573  ls
+  574  cd dellcode/
+  575  ls
+  576  cd idrac-rockwell/
+  577  ls
+  578  more idracgetinfo.yml
+  579  cp idracgetinfo.yml ~ansible/rockwell/vsphere/ansible-vmware-vcenter-upgrade vcsa.yml
+  580  cp idracgetinfo.yml ~ansible/rockwell/vsphere/ansible-vmware-vcenter-upgrade/vcsa.yml
+  581  vi vcsa.yml
+  582  cd -
+  583  cd ..
+  584  ls
+  585  cd ..
+  586  ls
+  587  cd vsphere/ansible-vmware-vcenter-upgrade/
+  588  ls
+  589  vi vcsa.yml
+  590  ls
+  591  pwd
+  592  vi vcsa.yml
+  593  ansible-playbook vcsa.yml
+  594  vi vcsa.yml
+  595  ansible-playbook vcsa.yml
+  596  vi vcsa.yml
+  597  ansible-playbook vcsa.yml
+  598  vi vcsa.yml
+  599  ansible-playbook vcsa.yml
+  600  vi vcsa.yml
+  601  ansible-playbook vcsa.yml
+  602  vi vcsa.yml
+  603  ansible-playbook vcsa.yml
+  604  ls
+  605  rm ~/.ssh/known_hosts
+  606  vi vcsa.yml
+  607  ansible-playbook vcsa.yml
+  608  vi vcsa.yml
+  609  ansible-playbook vcsa.yml
+  610  vi vcsa.yml
+  611  ansible-playbook vcsa.yml
+  612  vi vcsa.yml
+  613  whoami
+  614  sudo bash
+  615  vi vcsa.yml
+  616  ansible-playbook vcsa.yml
+  617  vi vcsa.yml
+  618  ansible-playbook vcsa.yml
+  619  sudo bash
+  620  ansible-playbook vcsa.yml
+  621  vi vcsa.yml
+  622  ansible-playbook vcsa.yml
+  623  vi vcsa.yml
+  624  ansible-playbook vcsa.yml
+  625  vi vcsa.yml
+  626  ansible-playbook vcsa.yml
+  627  ls templates
+  628  vi vcsa.yml
+  629  ls
+  630  ansible-playbook vcsa.yml
+  631  vi vcsa.yml
+  632  ansible-playbook vcsa.yml
+  633  ls /home/ansible/rockwell/vsphere/ansible-vmware-vcenter-upgrade/templates/vCSA_to_ESXi.json.template
+  634  ls templates
+  635  cd /home/ansible/rockwell/vsphere
+  636  cd ansible-vmware-vcenter-upgrade/templates
+  637  ls vCSA_to_ESXi.json.template
+  638  ls
+  639  vi vcsa.yml
+  640  cd ..
+  641  ls
+  642  vi vcsa.yml
+  643  ansible-playbook vcsa.yml
+  644  vi vcsa.yml
+  645  ansible-playbook vcsa.yml
+  646  vi vcsa.yml
+  647  vi templates/vCSA_on_ESXi.json.template 
+  648  ansible-playbook vcsa.yml
+  649  ls
+  650  ls files
+  651  ls
+  652  cd files
+  653  ls
+  654  vi vcenter.xkdb.net.vCSA_on_ESXi.json 
+  655  rm vcenter.xkdb.net.vCSA_on_ESXi.json 
+  656  cd templates
+  657  ls
+  658  cd ../templates
+  659  ls
+  660  vi vCSA_on_ESXi.json.template 
+  661  cd ..
+  662  ls
+  663  ansible-playbook vcsa.yml
+  664  cd files
+  665  ls
+  666  vi vcenter.xkdb.net.vCSA_on_ESXi.json 
+  667  rm vcenter.xkdb.net.vCSA_on_ESXi.json 
+  668  cd ../templates
+  669  ls
+  670  vi vCSA_on_ESXi.json.template 
+  671  cp vCSA_on_ESXi.json-original.template
+  672  cp vCSA_on_ESXi.json.template vCSA_on_ESXi.json-original.template
+  673  vi vCSA_on_ESXi.json.template 
+  674  cd ..
+  675  ansible-playbook vcsa.yml
+  676  vi files/vcenter.xkdb.net.vCSA_on_ESXi.json 
+  677  vi templates/vCSA_on_ESXi.json.template 
+  678  vi vcsa.yml
+  679  ansible-playbook vcsa.yml
+  680  vi files/vcenter.xkdb.net.vCSA_on_ESXi.json 
+  681  ls
+  682  vi README.txt
+  683  cd files
+  684  vi ../vcsa.yml
+  685  ls
+  686  rm vcenter.xkdb.net.vCSA_on_ESXi.json 
+  687  cd ..
+  688  ls
+  689  ansible-playbook vcsa.yml
+  690  vi vcsa.yml
+  691  ls files
+  692  vi vcsa.yml
+  693  ls files
+  694  vi vcsa.yml
+  695  ansible-playbook vcsa.yml
+  696  vi vcsa.yml
+  697  ansible-playbook vcsa.yml
+  698  vi vcsa.yml
+  699  ansible-playbook vcsa.yml
+  700  vi vcsa.yml
+  701  ansible-playbook vcsa.yml
+  702  vi vcsa.yml
+  703  ansible-playbook vcsa.yml
+  704  vi vcsa.yml
+  705  ansible-playbook vcsa.yml
+  706  vi vcsa.yml
+  707  ansible-playbook -vvv vcsa.yml
+  708  vi vcsa.yml
+  709  ansible-playbook -vvv vcsa.yml
+  710  vi vcsa.yml
+  711  ansible-playbook -vvv vcsa.yml
+  712  vi vcsa.yml
+  713  ansible -v
+  714  ansible --version
+  715  vi vcsa.yml
+  716  ansible --version
+  717  ansible-playbook -vvv vcsa.yml
+  718  vi vcsa.yml
+  719  ansible-playbook -vvv vcsa.yml
+  720  echo $ANSIBLE_LIBRARY
+  721  cd rockwell
+  722  ls
+  723  cd vsphere
+  724  ls
+  725  cd *
+  726  ls
+  727  ls *yml
+  728  vi vcenter_query_example.yml 
+  729  ls
+  730  vi vcenter_upgrade.yml 
+  731  pwd
+  732  fg
+  733  pwd
+  734  ls
+  735  pwd
+  736  ls files
+  737  cd lin64
+  738  pwd
+  739  ls
+  740  cd files
+  741  ls
+  742  cd *
+  743  ls
+  744  pwd
+  745  ls
+  746  pwd
+  747  cd ..
+  748  ls
+  749  cd templates/
+  750  ls
+  751  cd upgrade
+  752  ls
+  753  cd *7
+  754  ls
+  755  pwd
+  756  ls
+  757  mv vCSA_on_ESXi.json ../..
+  758  pwd
+  759  ls -ldt .
+  760  ls -ldt *
+  761  ls -ldt .
+  762  ls
+  763  cp vCSA_on_ESXi.json ../..
+  764  cd ../../..
+  765  ls
+  766  cd ..
+  767  ls
+  768  chown -R u+w files
+  769  set -o vi
+  770  chmod -R u+w files
+  771  cd -
+  772  ls
+  773  pwd
+  774  ls
+  775  cd templates/
+  776  cd ..
+  777  ls
+  778  vi vCSA_on_ESXi.json 
+  779  pwd
+  780  ls
+  781  vi vCSA_on_ESXi.json 
+  782  mv vCSA_on_ESXi.json vCSA_on_ESXi.json.works
+  783  pwd
+  784  ls
+  785  vi vCSA_on_ESXi.json
+  786  cd rockwell
+  787  ls
+  788  cd vsphere
+  789  ls
+  790  cd *
+  791  ls
+  792  vi vCSA_on_ESXi.json
+  793  vi vCSA
+  794  vi vCSA_on_ESXi.json 
+  795  vi ansible_to_json.yml
+  796  df -k
+  797  cd /mnt/iso
+  798  ls
+  799  cd vcsa-cli-installer/
+  800  ls
+  801  cd templates
+  802  ls
+  803  cd upgrade
+  804  ls
+  805  cd *7
+  806  ls
+  807  vi vCSA_on_ESXi.json
+  808  pwd
+  809  ls
+  810  cd ..
+  811  ls
+  812  pwd
+  813  cd ..
+  814  ls
+  815  pwd
+  816  ls ..
+  817  ls
+  818  cp -R templates /home/ansible/rockwell/vsphere/ansible-vmware-vcenter-upgrade/files/
+  819  ls
+  820  pwd
+  821  ls
+  822  cd templates
+  823  ls
+  824  cd upgrade
+  825  ls
+  826  cd *7
+  827  ls
+  828  cp vCSA_on_ESXi.json /home/ansible/rockwell/vsphere/ansible-vmware-vcenter-upgrade/files/
+  829  ls
+  830  pwd
+  831  cd ../../..
+  832  ls
+  833  cd 
+  834  ls
+  835  cd rockwell
+  836  ls
+  837  cd vsphere
+  838  ls
+  839  cd *
+  840  ls
+  841  ls -ldt *
+  842  vi ansible_to_json.yml 
+  843  ls
+  844  ls -ldt * | more
+  845  ls
+  846  cd rockwell
+  847  ls
+  848  cd vsphere
+  849  ls
+  850  cd ansible-vmware-vcenter-upgrade/
+  851  ls
+  852  ansible-playbook vcsa.yml
+  853  vi vcsa.yml 
+  854  ansible-playbook vcsa.yml
+  855  vi /etc/ansible/ansible.cfg 
+  856  vi vcsa.yml 
+  857  ansible-playbook vcsa.yml
+  858  vi vcsa.yml 
+  859  ansible-playbook vcsa.yml
+  860  vi vcsa.yml 
+  861  ansible-playbook vcsa.yml
+  862  vi vcsa.yml 
+  863  ansible-playbook vcsa.yml
+  864  vi vcsa.yml 
+  865  ansible-playbook vcsa.yml
+  866  vi vcsa.yml 
+  867  ansible-playbook vcsa.yml
+  868  more /tmp/passwd
+  869  vi vcsa.yml 
+  870  more /tmp/passwd
+  871  ansible-playbook vcsa.yml
+  872  man tee
+  873  cat /etc/motd
+  874  cat /etc/issue
+  875  vi vcsa.yml 
+  876  ansible-playbook vcsa.yml
+  877  vi vcsa.yml 
+  878  ansible-playbook vcsa.yml
+  879  vi vcsa.yml 
+  880  ansible-playbook vcsa.yml
+  881  ls /tmp/issue
+  882  more /tmp/issue
+  883  vi vcsa.yml 
+  884  ansible-playbook vcsa.yml
+  885  vi vcsa.yml 
+  886  ansible-playbook vcsa.yml
+  887  vi vcsa.yml 
+  888  ansible-playbook vcsa.yml
+  889  vi vcsa.yml 
+  890  ansible-playbook vcsa.yml
+  891  vi vcsa.yml 
+  892  ansible-playbook -vvv vcsa.yml
+  893  vi vcsa.yml 
+  894  ansible-playbook -vvv vcsa.yml
+  895  ls lin64
+  896  pwd
+  897  ls
+  898  vi vcsa.yml 
+  899  ls files/lin64
+  900  vi vcsa.yml 
+  901  ansible-playbook -vvv vcsa.yml
+  902  vi vcsa.yml 
+  903  ansible-playbook -vvv vcsa.yml
+  904  more /tmp/cwd.txt
+  905  vi vcsa.yml 
+  906  echo $CWD
+  907  echo $PWD
+  908  vi vcsa.yml 
+  909  ansible-playbook -vvv vcsa.yml
+  910  more /tmp/pwd.txt
+  911  vi vcsa.yml 
+  912  ansible-playbook -vvv vcsa.yml
+  913  vi vcsa.yml 
+  914  ansible-playbook -vvv vcsa.yml
+  915  vi vcsa.yml 
+  916  ansible-playbook -vvv vcsa.yml
+  917  ls
+  918  more vcsa.yml
+  919  ansible-playbook -vvv vcsa.yml
+  920  vi vcsa.yml 
+  921  ls
+  922  cd templates
+  923  ls
+  924  vi vCSA_on_json.template
+  925  ls
+  926  vi vCSA_on_ESXi.json.template 
+  927  ls
+  928  cd ..
+  929  ls
+  930  ansible-playbook vcsa.yml
+  931  ls
+  932  vi vcsa.yml
+  933  ls
+  934  cd files
+  935  ls
+  936  cd lin64
+  937  ls
+  938  cd ..
+  939  ls
+  940  diff vCSA_on_ESXi.json.works lin64/vcenter.xkdb.net.vCSA_on_ESXi.json 
+  941  ls
+  942  cd lin64
+  943  ls
+  944  tail -f vcenter.xkdb.net-vcsa-deploy-log.txt 
+  945  exit
+  946  pwd
+  947  ls
+  948  cd rockwell
+  949  ls
+  950  cd vsphere
+  951  ls
+  952  cd ansible-vmware-vcenter-upgrade/
+  953  ls
+  954  cd vcsa
+  955  ls
+  956  cd ..
+  957  ansible-playbook vcsa.yml
+  958  ls
+  959  cd templates
+  960  ls
+  961  cd ..
+  962  cd files
+  963  ls
+  964  vi *works
+  965  ls
+  966  cd ..
+  967  ls
+  968  cd templates
+  969  ls
+  970  vi vCSA_on_ESXi.json.template
+  971  cd ..
+  972  ansible-playbook vcsa.yml
+  973  sls
+  974  cd ..
+  975  cd ansible-vmware-vcenter-upgrade/
+  976  ls
+  977  cd templates
+  978  ls
+  979  vi vCSA_on_ESXi.json
+  980  vi vCSA_on_ESXi.json.template
+  981  cd ..
+  982  ansible-playbook vcsa.yml
+  983  vi files/lin64/vcenter.xkdb.net.vCSA_on_ESXi.json 
+  984  vi templates/vCSA_on_ESXi.json.template
+  985  ansible-playbook vcsa.yml
+  986  vi templates/vCSA_on_ESXi.json.template
+  987  ansible-playbook vcsa.yml
+  988  vi vcsa.yml
+  989  vi /tmp/vcsa-deploy.txt
+  990  vi vcsa.yml
+  991  ansible-playbook vcsa.yml
+ 1022  history > HISTORY.out

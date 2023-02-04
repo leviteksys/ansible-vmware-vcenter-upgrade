@@ -1,0 +1,10 @@
+---
+- hosts:  localhost
+  gather_facts: true
+
+  vars:
+    ZZ
+
+  tasks:
+  # Generating json from playbook facts
+
