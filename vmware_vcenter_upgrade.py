@@ -102,7 +102,8 @@ class VMwareVCenterUpgrade(PyVmomi):
 
         self.username = module.params['username']
         self.password = module.params['password']
-        self.validate_certs = module.params['validate_certs']
+        #self.validate_certs = module.params['validate_certs']
+        self.ignore_certs = False
 
         self.version = module.params['version']
         self.action = module.params['action']
@@ -141,8 +142,8 @@ class VMwareVCenterUpgrade(PyVmomi):
     def get_auth_token(self):
         token_response = requests.post(
             self.auth_url,
+            verify=self.ignore_certs,
             auth=(self.username, self.password),
-            verify=self.validate_certs,
         )
 
         if not (token_response.status_code is 200 or token_response.status_code is 201):
@@ -203,7 +204,7 @@ class VMwareVCenterUpgrade(PyVmomi):
         response = None
         default_args = {
             'headers': self.auth_header,
-            'verify': self.validate_certs,
+            'verify': self.ignore_certs,
         }
 
         if body:
